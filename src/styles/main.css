@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+    font-family: "Google Sans", sans-serif;
+  }
+  
+#nprogress {
+    pointer-events: none;
+}
+
+#nprogress .bar {
+    @apply bg-black dark:bg-white fixed z-[99999999999] top-0 left-0 w-full h-[2px];
+}
