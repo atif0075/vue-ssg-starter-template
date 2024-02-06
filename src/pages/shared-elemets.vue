@@ -70,27 +70,25 @@ const allPackages = ref([
 <template>
   <HeroBg />
   <div class="flex flex-col justify-center items-center w-full h-screen">
-    <h1
-      class="text-7xl sm:text-9xl md:text-[10rem] font-bold text-gray-800 dark:text-white static z-50"
-    >
-      Vue SSG
+    <h1 class="text-7xl sm:text-9xl font-bold text-gray-800 dark:text-white static z-50">
+      Shared Elements
     </h1>
-    <div class="static z-50 flex justify-center items-center gap-1 max-w-2xl flex-wrap">
+    <div class="static z-50 flex justify-center items-center gap-4 max-w-2xl flex-wrap">
       <button
         v-for="item in allPackages"
         :key="item.id"
         v-shared-element:[item.name]
-        class="bg-gray-800 hover:bg-gray-700 text-white py-1 px-2 rounded-xl"
+        :style="{
+          transform: `rotate(${Math.random() * 10 - 5}deg)`
+        }"
+        class="bg-gray-800 hover:bg-gray-700 text-white py-1 px-2 rounded-xl duration-500 ease-in-out transition-all"
       >
         <a :href="item.url" target="_blank">{{ item.name }}</a>
       </button>
     </div>
     <div class="static z-50 mt-10">
-      <router-link
-        to="/shared-elemets"
-        class="bg-zinc-800 hover:bg-zinc-900 text-white p-3 rounded-xl"
-      >
-        See Shared Elements
+      <router-link to="/" class="bg-zinc-800 hover:bg-zinc-900 text-white p-3 rounded-xl">
+        Go back to Home
       </router-link>
     </div>
   </div>

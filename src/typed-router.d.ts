@@ -41,6 +41,7 @@ declare module 'vue-router/auto/routes' {
   export interface RouteNamedMap {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
     '404': RouteRecordInfo<'404', '/:ll(.*)', { ll: ParamValue<true> }, { ll: ParamValue<false> }>,
+    '/shared-elemets': RouteRecordInfo<'/shared-elemets', '/shared-elemets', Record<never, never>, Record<never, never>>,
   }
 }
 

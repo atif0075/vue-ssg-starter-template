@@ -9,6 +9,7 @@
       404
     </h1>
     <p class="static z-50">Page not found</p>
+    <router-link to="/" class="static z-50">Go back</router-link>
   </div>
 </template>
 <style scoped></style>

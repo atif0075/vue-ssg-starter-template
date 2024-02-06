@@ -1,5 +1,5 @@
 import './styles/main.css'
-
+import { SharedElementDirective, SharedElementRouteGuard } from 'v-shared-element'
 import { ViteSSG } from 'vite-ssg'
 import { routes } from 'vue-router/auto/routes'
 import { setupLayouts } from 'virtual:generated-layouts'
@@ -10,6 +10,10 @@ export const createApp = ViteSSG(
   {
     routes: setupLayouts(routes),
     base: import.meta.env.BASE_URL
+  },
+  ({ app, router, routes, isClient }) => {
+    app.use(SharedElementDirective)
+    router.beforeEach(SharedElementRouteGuard)
   },
   (ctx) => {
     // install all modules under `modules/`
