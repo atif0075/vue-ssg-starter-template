@@ -80,7 +80,7 @@ export default defineConfig({
           }
         ]
       }
-    }),
+    })
 
     // https://github.com/webfansplz/vite-plugin-vue-devtools
     // VueDevTools()
@@ -90,9 +90,6 @@ export default defineConfig({
   ssgOptions: {
     script: 'async',
     formatting: 'minify',
-    crittersOptions: {
-      reduceInlineStyles: false
-    },
     onFinished() {
       generateSitemap()
     }
@@ -100,6 +97,8 @@ export default defineConfig({
 
   ssr: {
     // TODO: workaround until they support native ESM
-    noExternal: ['workbox-window', /vue-i18n/]
+    noExternal: ['workbox-window', 
+    // 'v-shared-element', 'illusory'
+  ]
   }
 })

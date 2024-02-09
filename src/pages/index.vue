@@ -79,7 +79,6 @@ const allPackages = ref([
       <button
         v-for="item in allPackages"
         :key="item.id"
-        v-shared-element:[item.name]
         class="bg-gray-800 hover:bg-gray-700 text-white py-1 px-2 rounded-xl"
       >
         <a :href="item.url" target="_blank">{{ item.name }}</a>

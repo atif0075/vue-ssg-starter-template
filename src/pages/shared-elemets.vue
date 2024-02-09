@@ -77,7 +77,6 @@ const allPackages = ref([
       <button
         v-for="item in allPackages"
         :key="item.id"
-        v-shared-element:[item.name]
         :style="{
           transform: `rotate(${Math.random() * 10 - 5}deg)`
         }"
